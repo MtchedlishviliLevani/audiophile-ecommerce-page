@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Footer() {
     return (
         <footer className="bg-primaryBackground  text-center md:text-left  " >
-            <div className="container px-[5%]  md:max-w-[88%] xl:max-w-[1110px] 2xl:max-w-[1300px] md:p-0 pt-12 pb-9 mx-auto xl:bg-black-500 relative ">
+            <div className="container px-[5%]  sm:max-w-[88%] xl:max-w-[1110px] 2xl:max-w-[1300px] md:p-0 pt-12 pb-9 mx-auto xl:bg-black-500 relative ">
                 <div className="w-[100px] h-1 bg-buttonBackground absolute left-[50%] md:left-[0%] md:translate-x-[initial] top-[0px] translate-x-[-50%] "></div>
                 <div className="flex flex-col xl:flex-row xl:items-center xl:justify-between xl:pt-[30px] md:pt-[56px]"><div className="">
                     <Link to="/"><img className="m-auto md:m-[initial]" src={logo} alt="" /></Link>

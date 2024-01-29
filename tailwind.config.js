@@ -14,14 +14,24 @@ export default {
     container: {
       center: true,
       screens: {
+        sm: "480px",
         lg: "920px",
       },
+    },
+    screens: {
+      sm: "480px",
+      md: "768px",
+      lg: "920px",
+      xl: "1280px",
     },
     borderColor: {
       white: "#FFF",
     },
     fontFamily: {
       monrope: ["'Manrope', sans-serif"],
+    },
+    backgroundImage: {
+      earphone: "url('../assets/images/home/desktop/image-hero.jpg')",
     },
   },
   plugins: [],
