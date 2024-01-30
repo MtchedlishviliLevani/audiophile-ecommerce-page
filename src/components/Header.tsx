@@ -10,7 +10,7 @@ function Header() {
     console.log(isOpenMenu);
     return (
         <header className="bg-primaryBackground py-[32px] border-solid border-b border-white-500/100">
-            <div className="container px-[5%]  sm:max-w-[88%] xl:max-w-[1110px] 2xl:max-w-[1300px] md:p-0 mx-auto ">
+            <div className="container px-[5%] sm:px-[0]  sm:max-w-[90%] xl:max-w-[1110px] 2xl:max-w-[1300px]  mx-auto ">
                 <nav>
                     <ul className="flex justify-between md:relative xl:static ">
                         <img
