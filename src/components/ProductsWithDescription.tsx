@@ -1,17 +1,11 @@
-// import React from "react";
-import data from "../../data";
-import Button from "../Button";
-// import earphonePhoto from "../../assets/images/";
-// import headPhoneMarkIIMob from "../../assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg";
-// import headTab from "../../assets/images/product-xx99-mark-two-headphones/tablet/image-product.jpg";
-// import headTab from "../../assets/images/product-xx99-mark-one-headphones/mobile/image-product.jpg";
-// import f from "../../assets/images/product-xx99-mark-one-headphones/tablet/image-product.jpg";
-// import fx from "../../assets/images/product-xx99-mark-one-headphones/desktop/image-product.jpg";
-// import a from "../../assets/images/product-xx59-headphones/mobile/image-product.jpg";
-// import b from "../../assets/images/product-xx59-headphones/tablet/image-product.jpg";
-// import c from "../../assets/images/product-xx59-headphones/desktop/image-product.jpg";
-function Headphone() {
-    // const title = "XX99 Mark I Headphones"
+// import { earphonePageContent1 } from "../data"
+
+import type { productContant } from "../data"
+import Button from "./Button"
+
+
+
+function ProductsWithDescription({ data }: { data: productContant[] }) {
     return (
         <section className="pb-[80px]">
             {data.map((value, i) => (
@@ -29,7 +23,7 @@ function Headphone() {
             ))}
             <div></div>
         </section>
-    );
+    )
 }
 
-export default Headphone;
+export default ProductsWithDescription
