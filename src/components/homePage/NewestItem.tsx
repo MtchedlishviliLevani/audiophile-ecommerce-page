@@ -2,16 +2,8 @@
 
 import Button from "../Button";
 
-// import productImgDesktop from "../../assets/images/home/desktop/image-hero.jpg";
-// import productImgTablet from "../../assets/images/home/tablet/image-header.jpg";
-// import proudctImgMobile from "../../assets/images/home/mobile/image-header.jpg";
 function NewestItem() {
-    // const getBackgroundImage = () => {
-    //     const width = window.innerWidth;
-    //     if (width < 768) {
-    //         return `url(${proudctImgMobile})`
-    //     }
-    // }
+
 
     return (
 
@@ -25,7 +17,7 @@ function NewestItem() {
                         HeadphoneS</h2>
                     <p className="text-secondaryText opacity-45 text-[15px] text-center xl:text-left mb-[28px] xl:mb-[40px]">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
 
-                    <Button >See Products</Button>
+                    <Button color="buttonBackground" hoverBg="buttonBackgroundHoverOrange" position="" />
                 </div></div>
         </section>
     );
