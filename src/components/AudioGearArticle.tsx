@@ -4,7 +4,7 @@ import mainPhotoImgMobile from "../assets/images/shared/desktop/image-best-gear.
 
 function AudioGearArticle() {
     return (
-        <div className="lg:grid lg:grid-cols-2 lg:gap-16 mb-5">
+        <div className="lg:grid lg:grid-cols-2 lg:gap-16 mb-[100px]">
             <div className="lg:order-1 ">
                 <img src={mainPhotoImgMobile} alt="" className="md:hidden rounded-[8px] w-[100%] h-[300px] sm:h-[450px] sm:m-auto object-cover" />
                 <img

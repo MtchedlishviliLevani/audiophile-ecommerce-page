@@ -9,7 +9,7 @@ function HomePage() {
             <NewestItem />
             <div className="container px-[5%] sm:px-[0]  sm:max-w-[90%] xl:max-w-[1110px] 2xl:max-w-[1300px]  mx-auto">
                 <PreferredProducts />
-                <Categories />
+
                 {/* <AudioGearArticle /> */}
             </div>
         </>

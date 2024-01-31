@@ -5,7 +5,7 @@ import earphoneDesktop from "../../assets/images/home/desktop/image-earphones-yx
 
 function PreferredProductEarphone() {
     return (
-        <div className="flex flex-col gap-6 md:flex-row md:gap-[4%]">
+        <div className="flex flex-col gap-6 md:flex-row md:gap-[4%] mb-[150px]">
             <img src={earphoneMob} alt="" className="md:hidden rounded-[8px]  sm:h-[270px]  md:h-[initial] md:w-[48%]" />
             <img src={earphoneTablet} alt="" className="hidden md:block xl:hidden rounded-[8px]  md:h-[initial] md:w-[48%] md:max-h-[320px] object-cover" />
             <img src={earphoneDesktop} alt="" className="hidden xl:block rounded-[8px]  md:h-[initial] md:w-[48%] md:max-h-[320px] object-cover" />
