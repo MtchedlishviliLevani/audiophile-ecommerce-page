@@ -1,7 +1,9 @@
+import Container from "../components/Container"
 import PageNameComp from "../components/PageNameComp"
 import ProductsWithDescription from "../components/ProductsWithDescription"
+import { headphonePageContent } from "../data"
 // import Headphones from "../components/headphonePage/Headphones"
-import { earphonePageContent } from "../data"
+// import { earphonePageContent } from "../data"
 
 
 function HeadPhonesPage() {
@@ -9,10 +11,9 @@ function HeadPhonesPage() {
     return (
         <>
             <PageNameComp title="HEADPHONES" />
-            <div className="container px-[5%] sm:px-[0]  sm:max-w-[90%] xl:max-w-[1110px] 2xl:max-w-[1300px]  mx-auto">
-                {/* <Headphones /> */}
-                <ProductsWithDescription data={earphonePageContent} />
-            </div></>
+            <Container><ProductsWithDescription data={headphonePageContent} /></Container>                {/* <Headphones /> */}
+
+        </>
     )
 }
 

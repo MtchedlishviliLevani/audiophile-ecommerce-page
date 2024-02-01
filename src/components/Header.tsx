@@ -4,13 +4,14 @@ import cart from "../assets/images/shared/desktop/icon-cart.svg";
 import { useState } from "react";
 import ActiveMenu from "./ActiveMenu";
 import { Link } from "react-router-dom";
+import Container from "./Container";
 
 function Header() {
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
     console.log(isOpenMenu);
     return (
         <header className="bg-primaryBackground py-[32px] border-solid border-b border-white-500/100">
-            <div className="container px-[5%] sm:px-[0]  sm:max-w-[90%] xl:max-w-[1110px] 2xl:max-w-[1300px]  mx-auto ">
+            <Container>
                 <nav>
                     <ul className="flex justify-between md:relative xl:static ">
                         <img
@@ -40,7 +41,7 @@ function Header() {
                         <img src={cart} className="hover:cursor-pointer" />
                     </ul>
                 </nav>
-            </div>
+            </Container>
             {isOpenMenu && <ActiveMenu />}
         </header>
     );

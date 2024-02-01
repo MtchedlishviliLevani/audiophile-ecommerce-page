@@ -2,11 +2,12 @@ import headphonesImg from "../assets/images/shared/desktop/image-category-thumbn
 import speakerImg from "../assets/images/shared/desktop/image-category-thumbnail-speakers.png";
 import earphonesImg from "../assets/images/shared/desktop/image-category-thumbnail-earphones.png"
 import arrowRight from "../assets/images/shared/desktop/icon-arrow-right.svg"
+import Container from "./Container";
 
 function ActiveMenu() {
     return (
         <div className="bg-secondaryBakcground z-10 top-[11.5%] absolute w-[100%] h-[90%] xl:hidden">
-            <div className="container w-[90%]">
+            <Container>
                 <div className="flex flex-col md:flex-row gap-[68px] md:gap-3 mt-[84px] pb-[84px]">
                     <div className="bg-gray rounded-lg relative sm:w-[100%]">
                         <img className="absolute top-[15%] w-[160px] md:w-[140px] translate-x-[-50%] translate-y-[-50%] left-[50%]" src={headphonesImg} alt="" />
@@ -33,7 +34,7 @@ function ActiveMenu() {
                         </div>
                     </div>
                 </div>
-            </div>
+            </Container>
         </div>
     );
 }
