@@ -14,17 +14,18 @@ function Header() {
             <Container>
                 <nav>
                     <ul className="flex justify-between md:relative xl:static ">
-                        <img
+                        <img loading="lazy"
                             src={burgerMenu}
                             onClick={() => setIsOpenMenu(!isOpenMenu)}
                             alt=""
                             className="hover:cursor-pointer xl:hidden"
                         />
 
-                        <img
+                        <Link to="/">   <img loading="lazy"
                             src={logo}
                             className="hover:cursor-pointer md:absolute md:tranform-x-[-50%] md:left-[10%] xl:static"
-                        /><div className="hidden xl:flex gap-[34px]">
+                        /></Link>
+                        <div className="hidden xl:flex gap-[34px]">
                             <li className="hover:text-buttonBackground">
                                 <Link to="/" className="text-white">HOME</Link>
                             </li>
@@ -38,7 +39,7 @@ function Header() {
                                 <Link to="/earphones">EARPHONES</Link>
                             </li>
                         </div>
-                        <img src={cart} className="hover:cursor-pointer" />
+                        <img loading="lazy" src={cart} className="hover:cursor-pointer" />
                     </ul>
                 </nav>
             </Container>

@@ -6,13 +6,13 @@ function AudioGearArticle() {
     return (
         <div className="lg:grid lg:grid-cols-2 lg:gap-16 mb-[100px]">
             <div className="lg:order-1 ">
-                <img src={mainPhotoImgMobile} alt="" className="md:hidden rounded-[8px] w-[100%] h-[300px] sm:h-[450px] sm:m-auto object-cover" />
+                <img loading="lazy" src={mainPhotoImgMobile} alt="" className="md:hidden rounded-[8px] w-[100%] h-[300px] sm:h-[450px] sm:m-auto object-cover" />
                 <img
                     src={mainPhotoImgTablet}
                     alt=""
                     className="hidden md:block lg:hidden rounded-[10px]"
                 />
-                <img src={mainPhotoImgDesktop} alt="" className="hidden lg:block rounded-[10px]" /></div>
+                <img loading="lazy" src={mainPhotoImgDesktop} alt="" className="hidden lg:block rounded-[10px]" /></div>
             <div className="lg:flex lg:flex-col lg:justify-center">
                 <h2 className="mt-[64px] md:mt-[32px] lg:mt-[initial] mb-[32px] font-bold text-[40px] uppercase text-center lg:text-left leading-[44px]">Bringing you the <small className="text-[#D87D4A] text-[40px]">best</small> audio gear</h2>
                 <p className="text-[15px opacity-50 text-center lg:text-left">
