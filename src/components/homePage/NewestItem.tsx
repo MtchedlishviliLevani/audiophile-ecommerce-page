@@ -1,5 +1,6 @@
 // import productImg from "../../src/assets/images/home/desktop/image-hero.jpg";
 
+import { Link } from "react-router-dom";
 import Button from "../Button";
 
 function NewestItem() {
@@ -17,7 +18,7 @@ function NewestItem() {
                         HeadphoneS</h2>
                     <p className="text-secondaryText opacity-45 text-[15px] text-center xl:text-left mb-[28px] xl:mb-[40px]">Experience natural, lifelike audio and exceptional build quality made for the passionate music enthusiast.</p>
 
-                    <Button color="buttonBackground" hoverBg="buttonBackgroundHoverOrange" position="" />
+                    <Link to="/cart/XX99MARKII">  <Button color="buttonBackground" hoverBg="buttonBackgroundHoverOrange" position="" /></Link>
                 </div></div>
         </section>
     );

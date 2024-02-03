@@ -1,5 +1,5 @@
 // import { earphonePageContent1 } from "../data"
-
+import { Link } from "react-router-dom"
 import type { productContant } from "../data"
 import Button from "./Button"
 
@@ -17,7 +17,7 @@ function ProductsWithDescription({ data }: { data: productContant[] }) {
                         {value.category ? <h4 className="text-[#D87D4A] text-[14px] text-center lg:text-left my-[32px] lg:my-6 ">{value.category}</h4> : null}
                         <h2 className="text-[32px] lg:text-[40px] lg:tracking-[1.4px] font-bold leading-9 lg:leading-[44px] text-center lg:text-left">{value.title}</h2>
                         <p className="text-center lg:text-left my-[24px] opacity-45">{value.paragraph}</p>
-                        <Button color="buttonBackground" hoverBg="" position="initial" />
+                        <Link to={value.pathName}> <Button color="buttonBackground" hoverBg="" position="initial" /></Link>
                     </div>
                 </div>
             ))}

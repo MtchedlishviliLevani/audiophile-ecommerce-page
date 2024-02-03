@@ -4,6 +4,7 @@ export interface productContant {
   paragraph: string;
   buttonText: string;
   productId?: number;
+  pathName: string;
   image: {
     mobile: string;
     tablet: string;
@@ -15,6 +16,7 @@ export const headphonePageContent: productContant[] = [
   {
     category: "NEW PRODUCT",
     title: "XX99 Mark II Headphones",
+    pathName: "/cart/XX99MARKII",
     paragraph:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     buttonText: "SEE PRODUCT",
@@ -31,6 +33,7 @@ export const headphonePageContent: productContant[] = [
   {
     category: "",
     title: "XX99 Mark I Headphones",
+    pathName: "/cart/XX99MARKI",
     paragraph:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go.",
     buttonText: "SEE PRODUCT",
@@ -47,6 +50,7 @@ export const headphonePageContent: productContant[] = [
   {
     category: "",
     title: "XX59 Headphones",
+    pathName: "/cart/XX59",
     paragraph:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
     buttonText: "SEE PRODUCT",
@@ -66,6 +70,7 @@ export const speakerPageContent: productContant[] = [
   {
     category: "NEW PRODUCT",
     title: "ZX9 SPEAKER",
+    pathName: "/cart/ZX9",
     paragraph:
       "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
     buttonText: "SEE PRODUCT",
@@ -80,6 +85,7 @@ export const speakerPageContent: productContant[] = [
   },
   {
     category: "",
+    pathName: "/cart/ZX7",
     title: "ZX7 SPEAKER",
     paragraph:
       "Stream high quality sound wirelessly with minimal loss. The ZX7 bookshelf speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
@@ -98,6 +104,7 @@ export const speakerPageContent: productContant[] = [
 export const earphonePageContent: productContant[] = [
   {
     category: "NEW PRODUCT",
+    pathName: "/cart/YX1",
     title: "YX1 WIRELESS EARPHONES",
     paragraph:
       "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
@@ -155,14 +162,17 @@ export interface Product {
   };
   relatedProducts: {
     product1: {
+      pathName: string;
       title: string;
       images: { mobile: string; tablet: string; desktop: string };
     };
     product2: {
+      pathName: string;
       title: string;
       images: { mobile: string; tablet: string; desktop: string };
     };
     product3: {
+      pathName: string;
       title: string;
       images: { mobile: string; tablet: string; desktop: string };
     };
@@ -174,8 +184,9 @@ export interface cartPageContentType {
   [productId: string]: Product;
 }
 
+/// CARTabz
 export const cartPageContent: cartPageContentType = {
-  "XX99 Mark IIHeadphones": {
+  XX99MARKII: {
     productId: 1,
     inTheBox: {
       amounts: {
@@ -222,6 +233,7 @@ export const cartPageContent: cartPageContentType = {
     },
     relatedProducts: {
       product1: {
+        pathName: "/cart/XX99MARKII",
         title: "XX99 MARK I",
         images: {
           mobile:
@@ -233,6 +245,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product2: {
+        pathName: "/cart/XX59",
         title: "XX59",
         images: {
           mobile:
@@ -244,6 +257,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product3: {
+        pathName: "/cart/ZX9",
         title: "ZX9 SPEAKER",
         images: {
           mobile:
@@ -257,7 +271,7 @@ export const cartPageContent: cartPageContentType = {
     },
   },
   // new product
-  "XX99 Mark I Headphones": {
+  XX99MARKI: {
     productId: 2,
     title: "XX99 Mark I Headphones",
     paragraph:
@@ -303,6 +317,7 @@ export const cartPageContent: cartPageContentType = {
     },
     relatedProducts: {
       product1: {
+        pathName: "/cart/XX99MARKII",
         title: "XX99 MARK II",
         images: {
           mobile:
@@ -314,6 +329,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product2: {
+        pathName: "/cart/XX99MARKI",
         title: "XX99 MARK I",
         images: {
           mobile:
@@ -325,6 +341,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product3: {
+        pathName: "/cart/ZX9",
         title: "ZX9 SPEAKER",
         images: {
           mobile:
@@ -337,7 +354,7 @@ export const cartPageContent: cartPageContentType = {
       },
     },
   },
-  "XX59 Headphones": {
+  XX59: {
     productId: 3,
     title: "XX59 Headphones",
     paragraph:
@@ -382,6 +399,7 @@ export const cartPageContent: cartPageContentType = {
     },
     relatedProducts: {
       product1: {
+        pathName: "/cart/XX99MARKII",
         title: "XX99 MARK II",
         images: {
           mobile:
@@ -393,6 +411,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product2: {
+        pathName: "/cart/XX99MARKI",
         title: "XX99 MARK I",
         images: {
           mobile:
@@ -404,6 +423,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product3: {
+        pathName: "/cart/ZX9",
         title: "ZX9 SPEAKER",
         images: {
           mobile:
@@ -416,7 +436,7 @@ export const cartPageContent: cartPageContentType = {
       },
     },
   },
-  "ZX9 SPEAKER": {
+  ZX9: {
     productId: 4,
     title: "ZX9 SPEAKER",
     paragraph:
@@ -465,6 +485,7 @@ export const cartPageContent: cartPageContentType = {
     },
     relatedProducts: {
       product1: {
+        pathName: "/cart/ZX7",
         title: "ZX7 SPEAKER",
         images: {
           mobile:
@@ -476,6 +497,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product2: {
+        pathName: "/cart/XX99MARKI",
         title: "XX99 MARK I",
         images: {
           mobile:
@@ -487,6 +509,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product3: {
+        pathName: "/cart/XX59",
         title: "XX59",
         images: {
           mobile:
@@ -499,7 +522,7 @@ export const cartPageContent: cartPageContentType = {
       },
     },
   },
-  "ZX7 SPEAKER": {
+  ZX7: {
     productId: 5,
     title: "ZX7 SPEAKER",
     paragraph:
@@ -548,6 +571,7 @@ export const cartPageContent: cartPageContentType = {
     },
     relatedProducts: {
       product3: {
+        pathName: "/cart/ZX9",
         title: "ZX9 SPEAKER",
         images: {
           mobile:
@@ -559,6 +583,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product1: {
+        pathName: "/cart/XX99MARKI",
         title: "XX99 MARK I",
         images: {
           mobile:
@@ -570,6 +595,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product2: {
+        pathName: "/cart/XX59",
         title: "XX59",
         images: {
           mobile:
@@ -582,7 +608,7 @@ export const cartPageContent: cartPageContentType = {
       },
     },
   },
-  "YX1 WIRELESS EARPHONES": {
+  YX1: {
     productId: 6,
     title: "YX1 WIRELESS EARPHONES",
     paragraph:
@@ -631,6 +657,7 @@ export const cartPageContent: cartPageContentType = {
     },
     relatedProducts: {
       product3: {
+        pathName: "/cart/ZX9",
         title: "ZX9 SPEAKER",
         images: {
           mobile:
@@ -642,6 +669,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product1: {
+        pathName: "/cart/XX99MARKI",
         title: "XX99 MARK I",
         images: {
           mobile:
@@ -653,6 +681,7 @@ export const cartPageContent: cartPageContentType = {
         },
       },
       product2: {
+        pathName: "/cart/XX59",
         title: "XX59",
         images: {
           mobile:

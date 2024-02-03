@@ -1,18 +1,23 @@
 // import React from 'react'
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData, useNavigate } from "react-router-dom";
 // import { Product } from "../App";
 import { Product } from "../data";
 import Container from "../components/Container";
+import scrollUpFn from "../helper/scrollUp";
+
 // import { HeadphonePageContentType } from '../App';
 // import { productContant } from '../data';
 function Cart() {
+    const navigate = useNavigate();
+    const backPrvsPage = () => {
+        navigate(-1)
+    }
     const description = useLoaderData() as Product;
-    console.log(description);
-    console.log(description);
+
     return (
         <Container>
             <div className="mt-[30px]">
-                <span className="text-[15px] opacity-45">Go Back</span>
+                <span onClick={backPrvsPage} className="text-[15px] opacity-45 cursor-pointer">Go Back</span>
                 <div className="mt-[30px] ">
                     <div className="md:flex md:gap-[10%]">
                         <img loading="lazy"
@@ -115,7 +120,8 @@ function Cart() {
                                 <h2 className="text-center text-[28px] font-bold my-[20px] ">
                                     {description.relatedProducts.product1.title}
                                 </h2>
-                                <button className="bg-buttonBackground m-auto block">lm</button>
+                                <Link to={description.relatedProducts.product1.pathName}>
+                                    <button onClick={scrollUpFn} className="bg-buttonBackground  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
                             </div>
                             <div className="md:w-[30%]">
                                 <img loading="lazy"
@@ -131,7 +137,8 @@ function Cart() {
                                 <h2 className="text-center text-[28px] font-bold my-[20px]">
                                     {description.relatedProducts.product2.title}
                                 </h2>
-                                <button className="bg-buttonBackground m-auto block">lm</button>
+                                <Link to={description.relatedProducts.product2.pathName}>
+                                    <button onClick={scrollUpFn} className="bg-buttonBackground  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
                             </div>
                             <div className="md:w-[30%]">
                                 <img loading="lazy"
@@ -147,7 +154,7 @@ function Cart() {
                                 <h2 className="text-center text-[28px] font-bold my-[20px] ">
                                     {description.relatedProducts.product3.title}
                                 </h2>
-                                <button className="bg-buttonBackground m-auto block">lm</button>
+                                <Link to={description.relatedProducts.product3.pathName}><button onClick={scrollUpFn} className="bg-buttonBackground  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
                             </div>
                         </div>
                     </div>
