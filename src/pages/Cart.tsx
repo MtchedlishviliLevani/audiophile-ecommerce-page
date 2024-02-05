@@ -1,13 +1,39 @@
-// import React from 'react'
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
-// import { Product } from "../App";
 import { Product } from "../data";
 import Container from "../components/Container";
 import scrollUpFn from "../helper/scrollUp";
+import { useSelector } from "react-redux";
+import { rootState } from "../store";
+import { useDispatch } from "react-redux";
+import { addToCart, decreaseCounter, increaseCounter, resetCounter } from "../features/cart/cartSlice";
+// import { useDispatch } from "react-redux";
+// import { useSelector } from "react-redux";
+// import { rootState } from "../store";
 
-// import { HeadphonePageContentType } from '../App';
-// import { productContant } from '../data';
 function Cart() {
+    const amountItems = useSelector((state: rootState) => state.cart[0]?.counter);
+    const amountItems1 = useSelector((state: rootState) => state.cart);
+    console.log(amountItems1)
+
+    const handleAddToCart = (id: number, price: number, counter: number, finalItem: number, imgSrc: string, title: string) => {
+        dispatch(addToCart({ id, counter, price, finalItem, imgSrc, title }));
+        dispatch(resetCounter())
+    };
+    const dispatch = useDispatch();
+    console.log(amountItems)
+
+    // const foo = () => {
+
+    //     dispatch(addToCart())
+    //     dispatch(amountReset())
+    // }
+
+    // const sumItems = useSelector((state: rootState) => state.cart.sumItems);
+    // console.log(sumItems)
+
+
+
+
     const navigate = useNavigate();
     const backPrvsPage = () => {
         navigate(-1)
@@ -45,9 +71,14 @@ function Cart() {
                             <small className="text-[18px] font-bold">
                                 $ {description.price}
                             </small>
-                            <div>
-                                <button className="bg-buttonBackground p-[15px] text-[20px]">
-                                    see pro
+                            <div className="flex gap-[30px] items-center mt-[25px]">
+                                <div className="flex bg-gray py-[7px]">
+                                    <button onClick={() => dispatch(decreaseCounter())} className="w-[70px] opacity-45">-</button>
+                                    <span className="text-[22px] font-bold">{amountItems}</span>
+                                    <button onClick={() => dispatch(increaseCounter())} className="w-[70px] opacity-45">+</button>
+                                </div>
+                                <button onClick={() => handleAddToCart(description.productId, description.price, amountItems, 0 + amountItems, description.productMainImg.mobile, description.shortTitle)} className="bg-buttonBackground p-[15px] text-[13px] font-bold px-[35px] text-secondaryText">
+                                    ADD TO CART
                                 </button>
                             </div>
                         </div>
@@ -160,7 +191,7 @@ function Cart() {
                     </div>
                 </div>
             </div>
-        </Container>
+        </Container >
     );
 }
 

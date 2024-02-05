@@ -3,8 +3,14 @@ import speakerImg from "../assets/images/shared/desktop/image-category-thumbnail
 import earphonesImg from "../assets/images/shared/desktop/image-category-thumbnail-earphones.png"
 import arrowRight from "../assets/images/shared/desktop/icon-arrow-right.svg"
 import Container from "./Container";
+// import { useDispatch, useSelector } from "react-redux";
+// import { rootState } from "../store";
+// import { amountItems } from "../features/cart/cartSlice";
 
 function ActiveMenu() {
+    // const amountItems = useSelector((state: rootState) => state.cart.amountItems);
+    // const dispatch = useDispatch();
+    // console.log(amountItems)
     return (
         <div className="bg-secondaryBakcground z-10 top-[11.5%] absolute w-[100%] h-[90%] xl:hidden">
             <Container>

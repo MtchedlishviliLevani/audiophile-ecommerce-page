@@ -6,15 +6,23 @@ import ActiveMenu from "./ActiveMenu";
 import { Link } from "react-router-dom";
 import Container from "./Container";
 
-function Header() {
+
+
+function Header({ onIsShown, isShown }: {
+    onIsShown: React.Dispatch<React.SetStateAction<boolean>>,
+    isShown: boolean
+}) {
+
     const [isOpenMenu, setIsOpenMenu] = useState<boolean>(false);
+    const handleClick = () => onIsShown(!isShown);
     console.log(isOpenMenu);
     return (
         <header className="bg-primaryBackground py-[32px] border-solid border-b border-white-500/100">
             <Container>
                 <nav>
                     <ul className="flex justify-between md:relative xl:static ">
-                        <img loading="lazy"
+                        <img
+                            loading="lazy"
                             src={burgerMenu}
                             onClick={() => setIsOpenMenu(!isOpenMenu)}
                             alt=""
@@ -39,7 +47,7 @@ function Header() {
                                 <Link to="/earphones">EARPHONES</Link>
                             </li>
                         </div>
-                        <img loading="lazy" src={cart} className="hover:cursor-pointer" />
+                        <img onClick={handleClick} loading="lazy" src={cart} className="hover:cursor-pointer" />
                     </ul>
                 </nav>
             </Container>

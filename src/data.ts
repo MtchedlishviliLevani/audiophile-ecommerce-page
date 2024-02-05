@@ -131,6 +131,7 @@ export interface Product {
   };
   isNew: string;
   title: string;
+  shortTitle: string;
   paragraph: string;
 
   features: {
@@ -188,6 +189,7 @@ export interface cartPageContentType {
 export const cartPageContent: cartPageContentType = {
   XX99MARKII: {
     productId: 1,
+    shortTitle: "XX99 MK II",
     inTheBox: {
       amounts: {
         amount1: "1x",
@@ -220,7 +222,7 @@ export const cartPageContent: cartPageContentType = {
       desktop:
         "../../src/assets/images/product-xx99-mark-two-headphones/desktop/image-product.jpg",
     },
-    price: 2.999,
+    price: 2999,
     paragraph:
       "The new XX99 Mark II headphones is the pinnacle of pristine audio. It redefines your premium headphone experience by reproducing the balanced depth and precision of studio-quality sound.",
     productImages: {
@@ -273,6 +275,7 @@ export const cartPageContent: cartPageContentType = {
   // new product
   XX99MARKI: {
     productId: 2,
+    shortTitle: "XX99 MARK I",
     title: "XX99 Mark I Headphones",
     paragraph:
       "As the gold standard for headphones, the classic XX99 Mark I offers detailed and accurate audio reproduction for audiophiles, mixing engineers, and music aficionados alike in studios and on the go. ",
@@ -356,6 +359,7 @@ export const cartPageContent: cartPageContentType = {
   },
   XX59: {
     productId: 3,
+    shortTitle: "XX59",
     title: "XX59 Headphones",
     paragraph:
       "Enjoy your audio almost anywhere and customize it to your specific tastes with the XX59 headphones. The stylish yet durable versatile wireless headset is a brilliant companion at home or on the move.",
@@ -438,6 +442,7 @@ export const cartPageContent: cartPageContentType = {
   },
   ZX9: {
     productId: 4,
+    shortTitle: "ZX9",
     title: "ZX9 SPEAKER",
     paragraph:
       "Upgrade your sound system with the all new ZX9 active speaker. It’s a bookshelf speaker system that offers truly wireless connectivity -- creating new possibilities for more pleasing and practical audio setups.",
@@ -524,6 +529,7 @@ export const cartPageContent: cartPageContentType = {
   },
   ZX7: {
     productId: 5,
+    shortTitle: "ZX7",
     title: "ZX7 SPEAKER",
     paragraph:
       "Stream high quality sound wirelessly with minimal to no loss. The ZX7 speaker uses high-end audiophile components that represents the top of the line powered speakers for home or studio use.",
@@ -610,6 +616,7 @@ export const cartPageContent: cartPageContentType = {
   },
   YX1: {
     productId: 6,
+    shortTitle: "YX1",
     title: "YX1 WIRELESS EARPHONES",
     paragraph:
       "Tailor your listening experience with bespoke dynamic drivers from the new YX1 Wireless Earphones. Enjoy incredible high-fidelity sound even in noisy environments with its active noise cancellation feature.",
