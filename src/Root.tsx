@@ -10,14 +10,19 @@ function Root() {
     const location = useLocation();
     const [isShown, setIsShown] = useState<boolean>(false);
 
-
     return (
-        <div>
+        <div >
+            {isShown && (<div
+                className={`w-[100%] h-[200vh]  left-[0] top-[0%] bg-[rgba(0,0,0,0.5)] fixed z-[30]
+                    `}
+            ></div>)}
+
             <Header onIsShown={setIsShown} isShown={isShown} />
+
             {isShown && <ShoppingCart />}
             <Outlet />
 
-            <div className=" container px-[5%] sm:px-[0]  sm:max-w-[90%] xl:max-w-[1110px] 2xl:max-w-[1300px]  mx-auto">
+            <div className={` ${isShown && "opacity-45"} container px-[5%] sm:px-[0]  sm:max-w-[90%] xl:max-w-[1110px] 2xl:max-w-[1300px]  mx-auto`}>
                 {location.pathname !== "/" && <Categories />}
                 <AudioGearArticle />
             </div>

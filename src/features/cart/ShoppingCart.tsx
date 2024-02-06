@@ -2,7 +2,7 @@
 // import { addToCart } from "./cartSlice";
 import { rootState } from "../../store";
 import { useSelector } from "react-redux";
-import { decreaseFinalItem, increaseFinalItem } from "./cartSlice";
+import { decreaseFinalItem, increaseFinalItem, resetList } from "./cartSlice";
 import { useDispatch } from "react-redux";
 import { selectTotalPrice } from "./cartSlice";
 function ShoppingCart() {
@@ -10,11 +10,12 @@ function ShoppingCart() {
     const amountItems1 = useSelector((state: rootState) => state.cart);
     const dispatch = useDispatch();
     return (
-        <div className="w-[377px] rounded-[8px] py-[30px] px-[15px]  ">
+        <div className="max-w-[377px] w-[90%] rounded-[8px] py-[30px] px-[15px]  translate-x-[-50%] translate-y-[-50%] left-[50%] md:left-[75%] top-[35%] bg-secondaryBakcground absolute z-[80] ">
             <div className="flex justify-between">
                 <h4 className="text-[18px] font-bold">CART ({amountItems1.length})</h4>
                 <h5
                     className="text-[15px] opacity-45 underline"
+                    onClick={() => dispatch(resetList())}
                 >
                     Remove all
                 </h5>
