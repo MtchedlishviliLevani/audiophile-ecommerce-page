@@ -53,7 +53,7 @@ function Header({ onIsShown, isShown }: {
                     </ul>
                 </nav>
             </Container>
-            {isOpenMenu && <ActiveMenu />}
+            {isOpenMenu && <ActiveMenu setIsOpenMenu={setIsOpenMenu} />}
         </header>
     );
 }

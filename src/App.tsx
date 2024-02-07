@@ -11,6 +11,7 @@ import SpeakersPage from "./pages/SpeakersPage";
 import EarphonePage from "./pages/EarphonePage";
 import Cart from "./pages/Cart";
 import { cartPageContent } from "./data";
+import CheckoutPage from "./pages/CheckoutPage";
 
 
 const router = createBrowserRouter(
@@ -32,6 +33,7 @@ const router = createBrowserRouter(
         }}
         element={<Cart />}
       />
+      <Route element={<CheckoutPage />} path="/checkout" />
     </Route>
   )
 );

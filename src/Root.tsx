@@ -19,12 +19,12 @@ function Root() {
 
             <Header onIsShown={setIsShown} isShown={isShown} />
 
-            {isShown && <ShoppingCart />}
+            {isShown && <ShoppingCart setIsShown={setIsShown} />}
             <Outlet />
 
             <div className={` ${isShown && "opacity-45"} container px-[5%] sm:px-[0]  sm:max-w-[90%] xl:max-w-[1110px] 2xl:max-w-[1300px]  mx-auto`}>
-                {location.pathname !== "/" && <Categories />}
-                <AudioGearArticle />
+                {location.pathname !== "/checkout" && "/" && <Categories />}
+                {location.pathname !== "/checkout" && <AudioGearArticle />}
             </div>
 
             <Footer />
