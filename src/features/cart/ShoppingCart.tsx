@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { selectTotalPrice } from "./cartSlice";
 import close from "../../assets/images/checkout/closeIcon.svg"
 import { useState } from "react";
+import { Link } from "react-router-dom";
 function ShoppingCart({ setIsShown }: { setIsShown: React.Dispatch<React.SetStateAction<boolean>> }) {
     const [hidden, setHidden] = useState(true)
     const totalAmount = useSelector(selectTotalPrice);
@@ -51,7 +52,7 @@ function ShoppingCart({ setIsShown }: { setIsShown: React.Dispatch<React.SetStat
                     <h2 className="text-[15px] opacity-45 uppercase leading-[24px]">total</h2>
                     <span className="font-bold">{totalAmount.toLocaleString()}</span>
                 </div>
-                <button className="bg-buttonBackground block w-[100%] py-[20px] text-secondaryText text-[13px] font-bold uppercase">checkout</button>
+                <Link onClick={() => setIsShown(false)} to="/checkout"><button className="bg-buttonBackground block w-[100%] py-[20px] text-secondaryText text-[13px] font-bold uppercase">checkout</button></Link>
             </div>)}
         </>
     );

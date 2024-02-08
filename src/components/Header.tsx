@@ -17,7 +17,6 @@ function Header({ onIsShown, isShown }: {
     const handleClick = () => {
         onIsShown(!isShown)
     };
-    console.log(isOpenMenu);
     return (
         <header className="bg-primaryBackground py-[32px] border-solid border-b border-white-500/100">
             <Container>

@@ -9,7 +9,7 @@ export default {
       secondaryBakcground: "#FFF",
       secondaryText: "#FFF",
       buttonBackground: "#D87D4A",
-      buttonBackgroundHoverOrange: "rgba(251, 175, 133, 1)",
+      buttonBackgroundHoverOrange: "rgba(251, 175, 133)",
       hoverBlackColorBg: "#4C4C4C",
       gray: "rgba(241, 241, 241, 1)",
     },

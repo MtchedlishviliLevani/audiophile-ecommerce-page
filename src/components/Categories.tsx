@@ -8,9 +8,9 @@ function Categories() {
     return (
         <div>
             <div className="flex flex-col md:flex-row gap-[68px] md:gap-[10px xl:gap-[30px] mt-[84px] pb-[84px]">
-                <Category imgSrc={headphonesImg} />
-                <Category imgSrc={speakerImg} />
-                <Category imgSrc={earphonesImg} />
+                <Category imgSrc={headphonesImg} path="/headphones" />
+                <Category imgSrc={speakerImg} path="/speakers" />
+                <Category imgSrc={earphonesImg} path="earphones" />
             </div>
         </div>
 

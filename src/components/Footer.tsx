@@ -1,4 +1,5 @@
 import logo from "../assets/images/shared/desktop/logo.svg";
+import scrollUpFn from "../helper/scrollUp";
 import SocialMediaIcons from "./SocialMediaIcons";
 import { Link } from "react-router-dom";
 
@@ -11,10 +12,10 @@ function Footer() {
                     <Link to="/"><img loading="lazy" className="m-auto md:m-[initial]" src={logo} alt="" /></Link>
                 </div>
                     <ul className="my-12 md:my-8 flex flex-col gap-2 md:gap-5 xl:gap-7 md:flex-row ">
-                        <li className="text-secondaryText hover:text-buttonBackground"><Link to="/">HOME</Link></li>
-                        <li className="text-secondaryText hover:text-buttonBackground"><Link to="/headphones">HEADPHONES</Link></li>
-                        <li className="text-secondaryText hover:text-buttonBackground"><Link to="/speakers">SPEAKERS</Link></li>
-                        <li className="text-secondaryText hover:text-buttonBackground"><Link to="/earphones">EARPHONES</Link></li>
+                        <li className="text-secondaryText hover:text-buttonBackground"><Link onClick={() => scrollUpFn()} to="/">HOME</Link></li>
+                        <li className="text-secondaryText hover:text-buttonBackground"><Link onClick={() => scrollUpFn()} to="/headphones">HEADPHONES</Link></li>
+                        <li className="text-secondaryText hover:text-buttonBackground"><Link onClick={() => scrollUpFn()} to="/speakers">SPEAKERS</Link></li>
+                        <li className="text-secondaryText hover:text-buttonBackground"><Link onClick={() => scrollUpFn()} to="/earphones">EARPHONES</Link></li>
 
                     </ul></div>
 

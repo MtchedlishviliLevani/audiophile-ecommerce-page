@@ -77,7 +77,7 @@ function Cart() {
                                     <span className="text-[22px] font-bold">{amountItems}</span>
                                     <button onClick={() => dispatch(increaseCounter())} className="w-[70px] opacity-45">+</button>
                                 </div>
-                                <button onClick={() => handleAddToCart(description.productId, description.price, amountItems, 0 + amountItems, description.productMainImg.mobile, description.shortTitle)} className="bg-buttonBackground p-[15px] text-[13px] font-bold px-[35px] text-secondaryText">
+                                <button onClick={() => handleAddToCart(description.productId, description.price, amountItems, 0 + amountItems, description.productMainImg.mobile, description.shortTitle)} className="bg-buttonBackground hover:bg-buttonBackgroundHoverOrange p-[15px] text-[13px] font-bold px-[35px] text-secondaryText">
                                     ADD TO CART
                                 </button>
                             </div>
@@ -152,7 +152,7 @@ function Cart() {
                                     {description.relatedProducts.product1.title}
                                 </h2>
                                 <Link to={description.relatedProducts.product1.pathName}>
-                                    <button onClick={scrollUpFn} className="bg-buttonBackground  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
+                                    <button onClick={scrollUpFn} className="bg-buttonBackground hover:bg-buttonBackgroundHoverOrange  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
                             </div>
                             <div className="md:w-[30%]">
                                 <img loading="lazy"
@@ -169,7 +169,7 @@ function Cart() {
                                     {description.relatedProducts.product2.title}
                                 </h2>
                                 <Link to={description.relatedProducts.product2.pathName}>
-                                    <button onClick={scrollUpFn} className="bg-buttonBackground  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
+                                    <button onClick={scrollUpFn} className="bg-buttonBackground hover:bg-buttonBackgroundHoverOrange   text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
                             </div>
                             <div className="md:w-[30%]">
                                 <img loading="lazy"
@@ -185,7 +185,7 @@ function Cart() {
                                 <h2 className="text-center text-[28px] font-bold my-[20px] ">
                                     {description.relatedProducts.product3.title}
                                 </h2>
-                                <Link to={description.relatedProducts.product3.pathName}><button onClick={scrollUpFn} className="bg-buttonBackground  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
+                                <Link to={description.relatedProducts.product3.pathName}><button onClick={scrollUpFn} className="bg-buttonBackground hover:bg-buttonBackgroundHoverOrange  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
                             </div>
                         </div>
                     </div>

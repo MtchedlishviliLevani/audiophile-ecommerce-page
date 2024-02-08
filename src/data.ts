@@ -494,7 +494,7 @@ export const cartPageContent: cartPageContentType = {
         title: "ZX7 SPEAKER",
         images: {
           mobile:
-            "../../src/assets/images/product-zx7-speaker/mobile/image-product1.jpg",
+            "../../src/assets/images/product-zx7-speaker/mobile/image-product.jpg",
           tablet:
             "../../src/assets/images/product-zx7-speaker/tablet/image-product.jpg",
           desktop:
