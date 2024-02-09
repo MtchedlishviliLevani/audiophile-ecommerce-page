@@ -4,7 +4,7 @@ import Button from "../Button"
 
 function PreferredProductSpeaker1() {
     return (
-        <div className="bg-buttonBackground  w-[100%]  relative pt-[270px]  overflow-hidden sm:pt-[320px] lg:pt-[130px] pb-[55px] lg:pb-[124px] rounded-[8px] lg:pr-[95px]">
+        <div className="bg-buttonBackground mt-[40px] w-[100%]  relative pt-[270px]  overflow-hidden sm:pt-[320px] lg:pt-[130px] pb-[55px] lg:pb-[124px] rounded-[8px] lg:pr-[95px]">
             <div className="h-[170px] sm:h-[200px] lg:h-[320px] xl:h-[396px] bg-contain lg:bg-cover  min-w-[140px] sm:min-w-[200px] lg:min-w-[270px] xl:min-w-[335px] bg-no-repeat bg-[url(../../src/assets/images/home/mobile/image-speaker-zx9.png)]  absolute left-[50%] lg:left-[10%] lg:top-[229px] xl:top-[156px]  lg:translate-y-[initial] translate-x-[-50%]  top-[64px] sm:top-[89px] z-20"></div>
             {/* <div className="w-[100%] h-[300px] bg"></div> */}
             <img loading="lazy" className="absolute z-10 top-0 left-0 sm:translate-x-[-50%] sm:left-[50%] lg:left-[220px]  sm:w-[400px] lg:w-[650px] object-cover" src={circle} alt="" />

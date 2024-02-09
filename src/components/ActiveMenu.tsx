@@ -13,7 +13,7 @@ function ActiveMenu({ setIsOpenMenu }: { setIsOpenMenu: React.Dispatch<React.Set
         setIsOpenMenu(false)
     }
     return (
-        <div className="bg-secondaryBakcground z-10 top-[11.5%] absolute w-[100%] h-[90%] xl:hidden">
+        <div className="bg-secondaryBakcground  z-10 top-[11.5%] absolute w-[100%] h-[90%] xl:hidden">
             <Container>
                 <div className="flex flex-col md:flex-row gap-[68px] md:gap-3 mt-[84px] pb-[84px]">
                     <div className="bg-gray rounded-lg relative sm:w-[100%]">

@@ -6,9 +6,7 @@ import { useSelector } from "react-redux";
 import { rootState } from "../store";
 import { useDispatch } from "react-redux";
 import { addToCart, decreaseCounter, increaseCounter, resetCounter } from "../features/cart/cartSlice";
-// import { useDispatch } from "react-redux";
-// import { useSelector } from "react-redux";
-// import { rootState } from "../store";
+
 
 function Cart() {
     const amountItems = useSelector((state: rootState) => state.cart[0]?.counter);
@@ -20,20 +18,6 @@ function Cart() {
         dispatch(resetCounter())
     };
     const dispatch = useDispatch();
-    console.log(amountItems)
-
-    // const foo = () => {
-
-    //     dispatch(addToCart())
-    //     dispatch(amountReset())
-    // }
-
-    // const sumItems = useSelector((state: rootState) => state.cart.sumItems);
-    // console.log(sumItems)
-
-
-
-
     const navigate = useNavigate();
     const backPrvsPage = () => {
         navigate(-1)

@@ -5,6 +5,7 @@ import { useState } from "react";
 import ActiveMenu from "./ActiveMenu";
 import { Link } from "react-router-dom";
 import Container from "./Container";
+import scrollUpFn from "../helper/scrollUp";
 
 
 
@@ -18,7 +19,8 @@ function Header({ onIsShown, isShown }: {
         onIsShown(!isShown)
     };
     return (
-        <header className="bg-primaryBackground py-[32px] border-solid border-b border-white-500/100">
+        <header className={`bg-primaryBackground py-[32px] ${isOpenMenu ? "static" : "fixed"}  w-[100%] z-50 top-0 border-solid border-b border-white-500/100`}>
+            <div className=""></div>
             <Container>
                 <nav>
                     <ul className="flex justify-between md:relative xl:static ">
@@ -36,16 +38,16 @@ function Header({ onIsShown, isShown }: {
                         /></Link>
                         <div className="hidden xl:flex gap-[34px]">
                             <li className="hover:text-buttonBackground">
-                                <Link to="/" className="text-white">HOME</Link>
+                                <Link onClick={() => scrollUpFn()} to="/" className="text-white">HOME</Link>
                             </li>
                             <li className="hover:text-buttonBackground">
-                                <Link className="text-white" to="/headphones">HEADPHONES</Link>
+                                <Link onClick={() => scrollUpFn()} className="text-white" to="/headphones">HEADPHONES</Link>
                             </li>
                             <li className="hover:text-buttonBackground">
-                                <Link to="/speakers">SPEAKERS</Link>
+                                <Link onClick={() => scrollUpFn()} to="/speakers">SPEAKERS</Link>
                             </li>
                             <li className="hover:text-buttonBackground">
-                                <Link to="/earphones">EARPHONES</Link>
+                                <Link onClick={() => scrollUpFn()} to="/earphones">EARPHONES</Link>
                             </li>
                         </div>
                         <img onClick={handleClick} loading="lazy" src={cart} className="hover:cursor-pointer" />

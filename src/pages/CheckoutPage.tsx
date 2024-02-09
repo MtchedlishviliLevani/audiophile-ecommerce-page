@@ -6,6 +6,7 @@ import { rootState } from "../store";
 import { selectTotalPrice } from "../features/cart/cartSlice";
 import checkout from "../assets/images/checkout/icon-cash-on-delivery.svg"
 import { useNavigate } from "react-router-dom";
+import CheckoutPageModal from "../components/checkoutPage/CheckoutPageModal";
 
 function CheckoutPage() {
     // const dispatch = useDispatch();
@@ -19,6 +20,7 @@ function CheckoutPage() {
     const [country, setCountry] = useState("");
 
     const validated = name && email && tel && address && zip && city && country;
+    const [isValidated, setValdited] = useState(false)
     const navitagate = useNavigate()
     const [isActive, setIsActive] = useState(true);
     console.log(isActive);
@@ -29,6 +31,7 @@ function CheckoutPage() {
     return (
         <>
             <div className="xl:bg-gray">
+                {isValidated && <CheckoutPageModal />}
                 <Container>
                     <section className="xl:py-[25px]" >
                         <h5 onClick={() => navitagate(-1)} className="opacity-45 text-[16px] my-[20px] xl:mb-[20px] cursor-pointer ">Go Back </h5>
@@ -286,17 +289,23 @@ function CheckoutPage() {
                                                 GRAND TOTAL
                                             </h3>{" "}
                                             <small className="text-[18px] font-bold text-buttonBackground">
-                                                $ {(totalPrice + totalPrice / 5 + 50).toLocaleString()}
+                                                $ {(totalPrice + 50).toLocaleString()}
                                             </small>
                                         </div>
                                     </div>
-                                    <button className="mt-[30px] bg-buttonBackground py-[12px] px-[25px] w-[100%] text-secondaryText">
+                                    <button onClick={() => {
+                                        if (validated) {
+                                            setValdited(true)
+                                        }
+                                    }} className="mt-[30px] bg-buttonBackground py-[12px] px-[25px] w-[100%] text-secondaryText">
                                         CONTINUE & PAY
                                     </button>
                                 </div>
                             </div></div>
+
                     </section>
                 </Container></div>
+
         </>
     );
 }

@@ -22,16 +22,10 @@ function ShoppingCart({ setIsShown }: { setIsShown: React.Dispatch<React.SetStat
         <>{hidden && (
             <div className="max-w-[377px] w-[90%] rounded-[8px] py-[30px] px-[15px]  translate-x-[-50%] translate-y-[-50%] left-[50%] md:left-[75%] top-[35%] bg-secondaryBakcground absolute z-[80] ">
                 <img src={close} onClick={() => handleClose()} className="absolute left-[93%] top-[1%] cursor-pointer" alt="" />
-                <div className="flex justify-between">
+                <div className="">
                     <h4 className="text-[18px] font-bold">CART ({amountItems1.length})</h4>
-                    <h5
-                        className="text-[15px] opacity-45 underline"
-                        onClick={() => dispatch(resetList())}
-                    >
-                        Remove all
-                    </h5>
+
                 </div>
-                {/* {amountItems1.map((price) => <h1>{price?.finalItem}</h1>)} */}
                 {amountItems1.map((value, i) => <div key={i} className="mt-[40px] flex justify-between items-center">
                     <img src={value?.imgSrc} className="w-[64px] rounded-xl" alt="" />
                     <div className="flex flex-col gap-1 ml-[-50px]">
@@ -50,7 +44,7 @@ function ShoppingCart({ setIsShown }: { setIsShown: React.Dispatch<React.SetStat
 
                 <div className="my-[30px] flex justify-between">
                     <h2 className="text-[15px] opacity-45 uppercase leading-[24px]">total</h2>
-                    <span className="font-bold">{totalAmount.toLocaleString()}</span>
+                    <span className="font-bold">$ {totalAmount.toLocaleString()}</span>
                 </div>
                 <Link onClick={() => setIsShown(false)} to="/checkout"><button className="bg-buttonBackground block w-[100%] py-[20px] text-secondaryText text-[13px] font-bold uppercase">checkout</button></Link>
             </div>)}
