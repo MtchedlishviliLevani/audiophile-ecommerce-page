@@ -30,7 +30,7 @@ function Cart() {
                 <div className="mt-[30px] ">
                     <div className="md:flex md:gap-[10%]">
                         <img loading="lazy"
-                            src={description.productMainImg?.mobile}
+                            src="/src/assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg"
                             className="rounded-[8px] w-[100%] h-[330px] object-cover md:hidden"
                             alt="product main image"
                         />
