@@ -217,9 +217,11 @@ export const cartPageContent: cartPageContentType = {
     productMainImg: {
       mobile:
         // fix
-        require("../../src/assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg"),
-      tablet: require("../../src/assets/images/product-xx99-mark-two-headphones/tablet/image-product.jpg"),
-      desktop: require("../../src/assets/images/product-xx99-mark-two-headphones/desktop/image-product.jpg"),
+        "./assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg",
+      tablet:
+        "../../src/assets/images/product-xx99-mark-two-headphones/tablet/image-product.jpg",
+      desktop:
+        "../../src/assets/images/product-xx99-mark-two-headphones/desktop/image-product.jpg",
     },
     price: 2999,
     paragraph:
