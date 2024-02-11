@@ -216,7 +216,8 @@ export const cartPageContent: cartPageContentType = {
     },
     productMainImg: {
       mobile:
-        "../../src/assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg",
+        // fix
+        "../assets/images/product-xx99-mark-two-headphones/mobile/image-product.jpg",
       tablet:
         "../../src/assets/images/product-xx99-mark-two-headphones/tablet/image-product.jpg",
       desktop:

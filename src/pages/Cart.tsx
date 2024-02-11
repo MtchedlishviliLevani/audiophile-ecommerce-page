@@ -10,8 +10,7 @@ import { addToCart, decreaseCounter, increaseCounter, resetCounter } from "../fe
 
 function Cart() {
     const amountItems = useSelector((state: rootState) => state.cart[0]?.counter);
-    const amountItems1 = useSelector((state: rootState) => state.cart);
-    console.log(amountItems1)
+    // const amountItems1 = useSelector((state: rootState) => state.cart);
 
     const handleAddToCart = (id: number, price: number, counter: number, finalItem: number, imgSrc: string, title: string) => {
         dispatch(addToCart({ id, counter, price, finalItem, imgSrc, title }));
