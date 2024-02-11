@@ -30,17 +30,17 @@ function Cart() {
                 <div className="mt-[30px] ">
                     <div className="md:flex md:gap-[10%]">
                         <img loading="lazy"
-                            src={description.productMainImg.mobile}
+                            src={description.productMainImg?.mobile}
                             className="rounded-[8px] w-[100%] h-[330px] object-cover md:hidden"
                             alt="product main image"
                         />
                         <img loading="lazy"
-                            src={description.productMainImg.tablet}
+                            src={description.productMainImg?.tablet}
                             alt="product main image"
                             className="rounded-[8px] hidden md:block xl:hidden md:w-[48%] h-[480px]"
                         />
                         <img loading="lazy"
-                            src={description.productMainImg.desktop}
+                            src={description.productMainImg?.desktop}
                             className="rounded-[8px] hidden xl:block w-[48%]"
                             alt="product main image"
                         />
