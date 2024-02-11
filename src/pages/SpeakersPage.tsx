@@ -8,8 +8,6 @@ function SpeakersPage() {
         <>
             <PageNameComp title="SPEAKERS" />
             <Container><ProductsWithDescription data={speakerPageContent} /></Container>
-
-
         </>
     );
 }

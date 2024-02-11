@@ -4,18 +4,16 @@ import earphonesImg from "../assets/images/shared/desktop/image-category-thumbna
 import arrowRight from "../assets/images/shared/desktop/icon-arrow-right.svg"
 import Container from "./Container";
 import { Link } from "react-router-dom";
-// import { useDispatch, useSelector } from "react-redux";
-// import { rootState } from "../store";
-// import { amountItems } from "../features/cart/cartSlice";
+
 
 function ActiveMenu({ setIsOpenMenu }: { setIsOpenMenu: React.Dispatch<React.SetStateAction<boolean>> }) {
     const closeActiveMenu = () => {
         setIsOpenMenu(false)
     }
     return (
-        <div className="bg-secondaryBakcground  z-10 top-[11.5%] absolute w-[100%] h-[90%] xl:hidden">
+        <div className="bg-secondaryBakcground  z-30 top-[11.5%] absolute w-[100%] h-[90%] xl:hidden">
             <Container>
-                <div className="flex flex-col md:flex-row gap-[68px] md:gap-3 mt-[84px] pb-[84px]">
+                <div className="bg-secondaryBakcground flex flex-col md:flex-row gap-[68px] md:gap-3 mt-[84px] pb-[84px]">
                     <div className="bg-gray rounded-lg relative sm:w-[100%]">
                         <img loading="lazy" className="absolute top-[15%] w-[160px] md:w-[140px] translate-x-[-50%] translate-y-[-50%] left-[50%]" src={headphonesImg} alt="" />
                         <h4 className="text-#000-700 text-center  mt-[88px] mb-[17px]">HEADPHONES</h4>

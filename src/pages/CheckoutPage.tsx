@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Container from "../components/Container";
-// import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";
 import { rootState } from "../store";
 import { selectTotalPrice } from "../features/cart/cartSlice";
@@ -9,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 import CheckoutPageModal from "../components/checkoutPage/CheckoutPageModal";
 
 function CheckoutPage() {
-    // const dispatch = useDispatch();
     const cart = useSelector((state: rootState) => state.cart);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -23,14 +21,11 @@ function CheckoutPage() {
     const [isValidated, setValdited] = useState(false)
     const navitagate = useNavigate()
     const [isActive, setIsActive] = useState(true);
-    console.log(isActive);
-    console.log(selectTotalPrice);
-    // const totalPrice =useSelector((state:rootState)=>state.)
     const totalPrice = useSelector(selectTotalPrice);
 
     return (
         <>
-            <div className="xl:bg-gray">
+            <div className="xl:bg-gray mt-[90px]">
                 {isValidated && <CheckoutPageModal />}
                 <Container>
                     <section className="xl:py-[25px]" >

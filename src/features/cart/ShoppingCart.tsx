@@ -1,13 +1,12 @@
-// import { useSelector } from "react-redux";
-// import { addToCart } from "./cartSlice";
 import { rootState } from "../../store";
 import { useSelector } from "react-redux";
-import { decreaseFinalItem, increaseFinalItem, resetList } from "./cartSlice";
+import { decreaseFinalItem, increaseFinalItem } from "./cartSlice";
 import { useDispatch } from "react-redux";
 import { selectTotalPrice } from "./cartSlice";
 import close from "../../assets/images/checkout/closeIcon.svg"
 import { useState } from "react";
 import { Link } from "react-router-dom";
+
 function ShoppingCart({ setIsShown }: { setIsShown: React.Dispatch<React.SetStateAction<boolean>> }) {
     const [hidden, setHidden] = useState(true)
     const totalAmount = useSelector(selectTotalPrice);

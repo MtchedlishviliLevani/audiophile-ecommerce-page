@@ -26,7 +26,7 @@ function Cart() {
 
     return (
         <Container>
-            <div className="mt-[30px]">
+            <div className="mt-[130px]">
                 <span onClick={backPrvsPage} className="text-[15px] opacity-45 cursor-pointer">Go Back</span>
                 <div className="mt-[30px] ">
                     <div className="md:flex md:gap-[10%]">

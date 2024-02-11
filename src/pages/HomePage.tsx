@@ -9,9 +9,6 @@ function HomePage() {
         <>
             <NewestItem />
             <Container><PreferredProducts /></Container>
-
-            {/* <AudioGearArticle /> */}
-
         </>
     )
 }

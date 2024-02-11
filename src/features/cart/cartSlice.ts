@@ -85,9 +85,6 @@ const cartSlice = createSlice({
     resetCounter: (state) => {
       state[0].counter = 1;
     },
-    resetList: () => {
-      return [];
-    },
   },
 });
 
@@ -96,7 +93,6 @@ export const {
   increaseCounter,
   decreaseCounter,
   resetCounter,
-  resetList,
   increaseFinalItem,
   decreaseFinalItem,
 } = cartSlice.actions;
@@ -106,99 +102,5 @@ export const selectTotalPrice = (state: { cart: initialType[] }) => {
     0
   );
 };
-
-// interface CartItem {
-//   productId: number;
-//   quantity: number;
-//   price: number;
-// }
-
-// interface CartState {
-//   items: CartItem[];
-//   isShown: boolean;
-// }
-
-// const initialState: CartState = {
-//   items: [],
-//   isShown: false,
-// };
-
-// const cartSlice = createSlice({
-//   name: "cart",
-//   initialState,
-//   reducers: {
-//     addItemToCart: (state, action: PayloadAction<CartItem>) => {
-//       const { productId, quantity, price } = action.payload;
-//       const existingItemIndex = state.items.findIndex(
-//         (item) => item.productId === productId
-//       );
-
-//       if (existingItemIndex !== -1) {
-//         // If item already exists, update quantity
-//         state.items[existingItemIndex].quantity += quantity;
-//       } else {
-//         // If item doesn't exist, add it to the cart
-//         state.items.push({ productId, quantity, price });
-//       }
-
-//       state.isShown = true;
-//     },
-//     removeItemFromCart: (state, action: PayloadAction<number>) => {
-//       const productIdToRemove = action.payload;
-//       state.items = state.items.filter(
-//         (item) => item.productId !== productIdToRemove
-//       );
-//     },
-//     updateCartItemQuantity: (
-//       state,
-//       action: PayloadAction<{ productId: number; quantity: number }>
-//     ) => {
-//       const { productId, quantity } = action.payload;
-//       const itemToUpdate = state.items.find(
-//         (item) => item.productId === productId
-//       );
-
-//       if (itemToUpdate) {
-//         itemToUpdate.quantity = quantity;
-//       }
-//     },
-
-//     toggleCartVisibility: (state) => {
-//       state.isShown = !state.isShown;
-//     },
-//     resetCart: (state) => {
-//       state.items = [];
-//       state.isShown = false;
-//     },
-//     increaseByOne: (state, action: PayloadAction<number>) => {
-//       const productIdToIncrease = action.payload;
-//       const itemToIncrease = state.items.find(
-//         (item) => item.productId === productIdToIncrease
-//       );
-
-//       if (itemToIncrease) {
-//         itemToIncrease.quantity += 1;
-//       }
-//     },
-//     decreaseByOne: (state, action: PayloadAction<number>) => {
-//       const productIdToDecrease = action.payload;
-//       const itemToDecrease = state.items.find(
-//         (item) => item.productId === productIdToDecrease
-//       );
-
-//       if (itemToDecrease && itemToDecrease.quantity > 1) {
-//         itemToDecrease.quantity -= 1;
-//       }
-//     },
-//   },
-// });
-
-// export const {
-//   addItemToCart,
-//   removeItemFromCart,
-//   updateCartItemQuantity,
-//   toggleCartVisibility,
-//   resetCart,
-// } = cartSlice.actions;
 
 export default cartSlice.reducer;
