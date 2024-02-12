@@ -9,7 +9,7 @@ function NewestItem() {
     return (
 
         <section
-            className={`bg-[url("../../assets/images/home/mobile/image-header.jpg")] sm:bg-[url("../../assets/images/home/tablet/image-header.jpg")]  xl:bg-[url("../../assets/images/home/desktop/image-hero.jpg")] bg-[length:100%_100%] bg-no-repeat bg-[center_top_-20px]   w-[100%] h-[37.5rem]  xl:h-[45rem]`}
+            className={`bg-[url("../../src/assets/images/home/mobile/image-header.jpg")] sm:bg-[url("../../src/assets/images/home/tablet/image-header.jpg")]  xl:bg-[url("../../src/assets/images/home/desktop/image-hero.jpg")] bg-[length:100%_100%] bg-no-repeat bg-[center_top_-20px]   w-[100%] h-[37.5rem]  xl:h-[45rem]`}
         >
             <div className="container max-w-[100%] px-[5%] sm:p-[0%] sm:max-w-[88%] xl:max-w-[1110px]">
                 <div className="pt-[108px] xl:pt-[145px] md:max-w-[430px] md:w-[100%] md:m-auto xl:m-[initial]">
