@@ -1,5 +1,3 @@
-// import productImg from "/images/home/desktop/image-hero.jpg";
-
 import { Link } from "react-router-dom";
 import Button from "../Button";
 

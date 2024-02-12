@@ -2,14 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
 import { cartPageContent } from "../../data";
 
-// interface Cart {
-//   sumItems: number;
-//   title: string;
-//   price: number;
-//   singleProductItems: number;
-//   totalPrice: number;
-// }
-
 const initialProduct = cartPageContent.XX99MARKII;
 interface initialType {
   id: number;
