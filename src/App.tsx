@@ -24,6 +24,7 @@ const router = createBrowserRouter(
       <Route
         path="/cart/:productId"
         loader={async ({ params }) => {
+          //:productId is params?.productId
           const productId: string | undefined = params?.productId;
           if (!productId) {
             throw new Error("Product ID is undefined");
@@ -39,6 +40,7 @@ const router = createBrowserRouter(
 );
 
 function App() {
+
   return (
     <>
       <RouterProvider router={router}></RouterProvider>

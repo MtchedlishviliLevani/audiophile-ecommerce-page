@@ -7,13 +7,11 @@ import { rootState } from "../store";
 import { useDispatch } from "react-redux";
 import { addToCart, decreaseCounter, increaseCounter, resetCounter } from "../features/cart/cartSlice";
 
-
 function Cart() {
-    const amountItems = useSelector((state: rootState) => state.cart[0]?.counter);
-    // const amountItems1 = useSelector((state: rootState) => state.cart);
+    const amountItems = useSelector((state: rootState) => state.cart?.counter);
 
-    const handleAddToCart = (id: number, price: number, counter: number, finalItem: number, imgSrc: string, title: string) => {
-        dispatch(addToCart({ id, counter, price, finalItem, imgSrc, title }));
+    const handleAddToCart = (id: number, price: number, finalItem: number, imgSrc: string, title: string) => {
+        dispatch(addToCart({ id, price, finalItem, imgSrc, title }));
         dispatch(resetCounter())
     };
     const dispatch = useDispatch();
@@ -22,6 +20,7 @@ function Cart() {
         navigate(-1)
     }
     const description = useLoaderData() as Product;
+
 
     return (
         <Container>
@@ -60,7 +59,7 @@ function Cart() {
                                     <span className="text-[22px] font-bold">{amountItems}</span>
                                     <button onClick={() => dispatch(increaseCounter())} className="w-[70px] opacity-45">+</button>
                                 </div>
-                                <button onClick={() => handleAddToCart(description.productId, description.price, amountItems, 0 + amountItems, description.productMainImg.mobile, description.shortTitle)} className="bg-buttonBackground hover:bg-buttonBackgroundHoverOrange p-[15px] text-[13px] font-bold px-[35px] text-secondaryText">
+                                <button onClick={() => handleAddToCart(description.productId, description.price, 0 + amountItems, description.productMainImg.mobile, description.shortTitle)} className="bg-buttonBackground hover:bg-buttonBackgroundHoverOrange p-[15px] text-[13px] font-bold px-[35px] text-secondaryText">
                                     ADD TO CART
                                 </button>
                             </div>

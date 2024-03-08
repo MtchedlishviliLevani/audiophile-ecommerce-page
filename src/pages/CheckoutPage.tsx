@@ -245,7 +245,7 @@ function CheckoutPage() {
                             <div className="my-[30px] xl:my-[initial] xl:bg-secondaryBakcground rounded-[8px] p-[10px]">
                                 <h2 className="uppercase font-bold text-[28px]">summary</h2>
                                 <div className="mt-[25px]">
-                                    {cart.map((value, i) => (
+                                    {cart.productInfo.map((value, i) => (
                                         <div key={i}>
                                             <div className="flex items-center justify-between mt-[15px] relative">
                                                 {" "}
@@ -288,11 +288,13 @@ function CheckoutPage() {
                                             </small>
                                         </div>
                                     </div>
-                                    <button onClick={() => {
-                                        if (validated) {
-                                            setValdited(true)
-                                        }
-                                    }} className="mt-[30px] bg-buttonBackground py-[12px] px-[25px] w-[100%] text-secondaryText">
+                                    <button
+                                        onClick={() => {
+                                            if (validated) {
+                                                setValdited(true)
+                                            }
+                                        }}
+                                        className="mt-[30px] bg-buttonBackground py-[12px] px-[25px] w-[100%] text-secondaryText">
                                         CONTINUE & PAY
                                     </button>
                                 </div>

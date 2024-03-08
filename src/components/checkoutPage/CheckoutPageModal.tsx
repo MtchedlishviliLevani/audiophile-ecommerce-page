@@ -12,7 +12,7 @@ function CheckoutPageModal() {
         setShowAllItems(!showAllItems);
     };
     const totalPrice = useSelector(selectTotalPrice)
-    console.log(products.length)
+    console.log(products.productInfo.length)
     return (
         <>
             <div className="w-[100%] fixed bg-primaryBackground opacity-50 h-[100%] z-40"></div>
@@ -28,7 +28,7 @@ function CheckoutPageModal() {
                 <div className="my-[20px]">
                     <div className="md:flex">
                         <div className="bg-gray p-[20px] rounded-l-lg md:w-[60%]">
-                            {products.slice(0, 1).map((value, i) => (
+                            {products.productInfo.slice(0, 1).map((value, i) => (
                                 <div key={i} className="flex justify-between ">
                                     <img className="w-[50px] " src={value.imgSrc} alt="" />
                                     <div className="flex flex-col justify-center ml-[-40px]">
@@ -39,12 +39,12 @@ function CheckoutPageModal() {
                                 </div>
                             ))}
 
-                            {products.length > 1 && (
+                            {products.productInfo.length > 1 && (
                                 <>
 
                                     {showAllItems && (
                                         <>
-                                            {products.slice(1).map((value, i) => (
+                                            {products.productInfo.slice(1).map((value, i) => (
                                                 <div key={i} className="flex justify-between ">
                                                     <img className="w-[50px] " src={value.imgSrc} alt="" />
                                                     <div className="flex flex-col justify-center ml-[-40px]">
@@ -60,7 +60,7 @@ function CheckoutPageModal() {
                                     <>
                                         <div className="line my-[10px]"></div>
                                         <p onClick={toggleItemsVisibility} className="text-center text-[12px] font-bold text-[#0000005a]">
-                                            {showAllItems ? 'Hide' : 'Show'} {products.length - 1} other item(s)
+                                            {showAllItems ? 'Hide' : 'Show'} {products.productInfo.length - 1} other item(s)
                                         </p>
                                     </>
                                 </>

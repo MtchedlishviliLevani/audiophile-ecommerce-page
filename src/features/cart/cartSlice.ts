@@ -1,81 +1,75 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { PayloadAction } from "@reduxjs/toolkit";
-import { cartPageContent } from "../../data";
 
-const initialProduct = cartPageContent.XX99MARKII;
-interface initialType {
+interface ProductInfoType {
   id: number;
-  counter: number;
   price: number;
   finalItem: number;
-  imgSrc: string;
-  title: string;
+  imgSrc?: string;
+  title?: string;
 }
 
-const initialState: initialType[] = [
-  {
-    id: initialProduct.productId,
-    counter: 1,
-    price: initialProduct.price,
-    finalItem: 2,
-    imgSrc: initialProduct.productMainImg.mobile,
-    title: initialProduct.shortTitle,
-  },
-];
+interface initialStateType {
+  counter: number;
+  productInfo: ProductInfoType[];
+}
 
-//resy
+const initialState: initialStateType = {
+  counter: 1,
+  productInfo: [],
+};
 
-//
 const cartSlice = createSlice({
   name: "cart",
   initialState,
   reducers: {
-    addToCart: (state, action: PayloadAction<initialType>) => {
-      const { id, price, counter, finalItem, imgSrc, title } = action.payload;
+    addToCart: (state, action: PayloadAction<ProductInfoType>) => {
+      const { id, price, finalItem, imgSrc, title } = action.payload;
 
-      const existingItemIndex = state.findIndex((item) => item.id === id);
+      const existingItemIndex = state.productInfo.findIndex(
+        (item) => item.id === id
+      );
 
       if (existingItemIndex !== -1) {
         // If item already exists, update quantity
-        state[existingItemIndex].finalItem += counter;
+        state.productInfo[existingItemIndex].finalItem += state.counter;
       } else {
         // If item doesn't exist, add it to the cart
-        state.push({ id, finalItem, counter, price, imgSrc, title });
+        state.productInfo.push({ id, finalItem, price, imgSrc, title });
       }
     },
     increaseCounter: (state) => {
-      // Check if there are items in the cart before modifying the counter
-
-      state[0].counter += 1;
+      state.counter += 1;
     },
     decreaseCounter: (state) => {
-      // Check if there are items in the cart before modifying the counter
-
-      state[0].counter -= 1;
+      if (state.counter > 1) state.counter -= 1;
     },
     increaseFinalItem: (state, action: PayloadAction<number>) => {
-      const existingItemIndex = state.findIndex(
+      const existingItemIndex = state.productInfo.findIndex(
         (item) => item.id === action.payload
       );
       if (existingItemIndex !== -1) {
-        state[existingItemIndex].finalItem += 1;
+        state.productInfo[existingItemIndex].finalItem += 1;
       }
     },
     decreaseFinalItem: (state, action: PayloadAction<number>) => {
-      const existingItemIndex = state.findIndex(
+      const existingItemIndex = state.productInfo.findIndex(
         (item) => item.id === action.payload
       );
       {
         if (
           existingItemIndex !== -1 &&
-          state[existingItemIndex].finalItem > 1
+          state.productInfo[existingItemIndex].finalItem > 1
         ) {
-          state[existingItemIndex].finalItem -= 1;
+          state.productInfo[existingItemIndex].finalItem -= 1;
         }
       }
     },
     resetCounter: (state) => {
-      state[0].counter = 1;
+      state.counter = 1;
+    },
+    resetCart: (state) => {
+      state.productInfo = [];
     },
   },
 });
@@ -87,9 +81,10 @@ export const {
   resetCounter,
   increaseFinalItem,
   decreaseFinalItem,
+  resetCart,
 } = cartSlice.actions;
-export const selectTotalPrice = (state: { cart: initialType[] }) => {
-  return state.cart.reduce(
+export const selectTotalPrice = (state: { cart: initialStateType }) => {
+  return state.cart.productInfo.reduce(
     (total, item) => total + item.price * item.finalItem,
     0
   );
