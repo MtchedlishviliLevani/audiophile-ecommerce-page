@@ -12,7 +12,7 @@ function Root() {
 
     return (
         <div >
-            {isShown && (<div
+            {isShown && (<div onClick={() => setIsShown(false)}
                 className={`w-[100%] h-[200vh]  left-[0] top-[0%] bg-[rgba(0,0,0,0.5)] fixed z-[30]
                     `}
             ></div>)}
