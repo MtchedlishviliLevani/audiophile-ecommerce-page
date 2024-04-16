@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "../Button";
+import { motion } from "framer-motion"
 
 function NewestItem() {
     return (
@@ -11,21 +12,29 @@ function NewestItem() {
                     <h4 className="text-secondaryText opacity-45 text-[14px] text-center xl:text-left">
                         NEW PRODUCT
                     </h4>
-                    <h2 className="text-secondaryText text-[36px] md:text-[56px] leading-[58px] font-bold uppercase tracking-[1.25px] text-center xl:text-left mt-4 mb-6">
+                    <motion.h2
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 2 }}
+                        className="text-secondaryText text-[36px] md:text-[56px] leading-[58px] font-bold uppercase tracking-[1.25px] text-center xl:text-left mt-4 mb-6">
                         XX99 Mark II HeadphoneS
-                    </h2>
+                    </motion.h2>
                     <p className="text-secondaryText opacity-45 text-[15px] text-center xl:text-left mb-[28px] xl:mb-[40px]">
                         Experience natural, lifelike audio and exceptional build quality
                         made for the passionate music enthusiast.
                     </p>
 
                     <Link to="/cart/XX99MARKII">
-                        {" "}
-                        <Button
-                            color="buttonBackground"
-                            hoverBg="buttonBackgroundHoverOrange"
-                            position=""
-                        />
+                        <motion.div
+                            initial={{ y: 200 }}
+                            animate={{ y: 0 }}
+                            transition={{ duration: 1 }}>
+                            <Button
+                                color="buttonBackground"
+                                hoverBg="buttonBackgroundHoverOrange"
+                                position=""
+                            />
+                        </motion.div>
                     </Link>
                 </div>
             </div>

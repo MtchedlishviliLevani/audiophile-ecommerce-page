@@ -6,6 +6,7 @@ import ActiveMenu from "./ActiveMenu";
 import { Link } from "react-router-dom";
 import Container from "./Container";
 import scrollUpFn from "../helper/scrollUp";
+import { motion } from "framer-motion"
 
 
 
@@ -19,7 +20,13 @@ function Header({ onIsShown, isShown }: {
         onIsShown(!isShown)
     };
     return (
-        <header className={`bg-primaryBackground py-[32px] ${isOpenMenu ? "static" : "fixed"}  w-[100%] z-50 top-0 border-solid border-b border-white-500/100`}>
+        <motion.header
+            key={Date()}
+            initial={{ y: -150 }}
+            animate={{ y: 0 }}
+            transition={{ duration: 0.4 }}
+
+            className={`bg-primaryBackground py-[32px] ${isOpenMenu ? "static" : "fixed"}  w-[100%] z-50 top-0 border-solid border-b border-white-500/100`}>
             <div className=""></div>
             <Container>
                 <nav>
@@ -34,6 +41,7 @@ function Header({ onIsShown, isShown }: {
 
                         <Link to="/">   <img loading="lazy"
                             src={logo}
+                            onClick={scrollUpFn}
                             className="hover:cursor-pointer md:absolute md:tranform-x-[-50%] md:left-[10%] xl:static"
                         /></Link>
                         <div className="hidden xl:flex gap-[34px]">
@@ -55,7 +63,7 @@ function Header({ onIsShown, isShown }: {
                 </nav>
             </Container>
             {isOpenMenu && <ActiveMenu setIsOpenMenu={setIsOpenMenu} />}
-        </header>
+        </motion.header>
     );
 }
 

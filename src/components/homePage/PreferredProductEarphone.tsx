@@ -7,24 +7,12 @@ import scrollUpFn from "../../helper/scrollUp";
 function PreferredProductEarphone() {
     return (
         <div className="flex flex-col gap-6 md:flex-row md:gap-[4%] mb-[150px]">
-            <img
-                loading="lazy"
-                src={earphoneMob}
-                alt=""
-                className="md:hidden rounded-[8px]  sm:h-[270px]  md:h-[initial] md:w-[48%]"
-            />
-            <img
-                loading="lazy"
-                src={earphoneTablet}
-                alt=""
-                className="hidden md:block xl:hidden rounded-[8px]  md:h-[initial] md:w-[48%] md:max-h-[320px] object-cover"
-            />
-            <img
-                loading="lazy"
-                src={earphoneDesktop}
-                alt=""
-                className="hidden xl:block rounded-[8px]  md:h-[initial] md:w-[48%] md:max-h-[320px] object-cover"
-            />
+            <picture>
+                <source srcSet={earphoneDesktop} media="(min-width:1100px)" />
+                <source srcSet={earphoneTablet} media="(min-width:768px)" />
+                <img className="rounded-[8px]"
+                    src={earphoneMob} alt="" />
+            </picture>
 
             <div className="bg-gray px-6 md:px-[41px] md:pr-[53px] py-[41px] md:py-[101px] rounded-[8px] md:w-[48%]">
                 <h3 className="mb-8  text-3xl text-[28px]  font-bold">YX1 EARPHONES</h3>

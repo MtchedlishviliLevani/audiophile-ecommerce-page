@@ -28,27 +28,23 @@ function Cart() {
                 <span onClick={backPrvsPage} className="text-[15px] opacity-45 cursor-pointer">Go Back</span>
                 <div className="mt-[30px] ">
                     <div className="md:flex md:gap-[10%]">
-                        <img loading="lazy"
-                            src={description.productMainImg.mobile}
-                            className="rounded-[8px] w-[100%] h-[330px] object-cover md:hidden"
-                            alt="product main image"
-                        />
-                        <img loading="lazy"
-                            src={description.productMainImg?.tablet}
-                            alt="product main image"
-                            className="rounded-[8px] hidden md:block xl:hidden md:w-[48%] h-[480px]"
-                        />
-                        <img loading="lazy"
-                            src={description.productMainImg?.desktop}
-                            className="rounded-[8px] hidden xl:block w-[48%]"
-                            alt="product main image"
-                        />
+
+                        <picture>
+                            <source srcSet={description.productMainImg.desktop} media="(min-width:1100px)" />
+                            <source srcSet={description.productMainImg.tablet} media="(min-width:768px)" />
+                            <img loading="lazy"
+                                className="rounded-[8px]  w-[100%] md:min-w-[300px]"
+                                src={description.productMainImg.mobile} alt="" />
+                        </picture>
+
+
+
                         <div className="md:flex md:flex-col">
                             {description.isNew ? <h4 className="text-buttonBackground my-[25px] text-[14px]">
                                 {description.isNew}
                             </h4> : null}
 
-                            <h2 className="text-[28px] font-bold">{description.title}</h2>
+                            <h2 className="text-[28px] font-bold mt-[10px]">{description.title}</h2>
                             <p className="my-[32px] opacity-50">{description.paragraph}</p>
                             <small className="text-[18px] font-bold">
                                 $ {description.price}
@@ -117,19 +113,21 @@ function Cart() {
                         />
                     </div>
 
+
+
                     <div className="mt-[100px]">
                         <h2 className="font-bold text-[28px] md:text-center">YOU MAY ALSO LIKE</h2>
                         <div className="flex flex-col gap-[40px] md:flex-row mt-[30px]">
                             <div className="md:w-[30%]">
-                                <img loading="lazy"
-                                    className="rounded-[8px] h-[200px] m-auto md:h-[250px] md:hidden"
-                                    src={description.relatedProducts.product1.images.mobile}
-                                    alt="product1 image"
-                                />
-                                <img loading="lazy" className="hidden md:block lg:hidden rounded-[8px] w-[100%] h-[320px]"
-                                    src={description.relatedProducts.product1.images.tablet} alt="product1 image" />
-                                <img loading="lazy" className="hidden lg:block rounded-[8px] w-[100%] md:min-h-[320px]"
-                                    src={description.relatedProducts.product1.images.desktop} alt="product1 image" />
+                                <picture>
+                                    <source srcSet={description.relatedProducts.product1.images.desktop} media="(min-width:1100px)" />
+                                    <source srcSet={description.relatedProducts.product1.images.tablet} media="(min-width:768px)" />
+                                    <img className="rounded-[8px]"
+                                        loading="lazy"
+                                        src={description.relatedProducts.product1.images.mobile}
+                                        alt=""
+                                    />
+                                </picture>
                                 <h2 className="text-center text-[28px] font-bold my-[20px] ">
                                     {description.relatedProducts.product1.title}
                                 </h2>
@@ -137,16 +135,15 @@ function Cart() {
                                     <button onClick={scrollUpFn} className="bg-buttonBackground hover:bg-buttonBackgroundHoverOrange  text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
                             </div>
                             <div className="md:w-[30%]">
-                                <img loading="lazy"
-                                    className="rounded-[8px] m-auto md:hidden h-[200px]"
-                                    src={description.relatedProducts.product2.images.mobile}
-                                    alt="product2 image"
-
-                                />
-                                <img loading="lazy" className="hidden md:block  lg:hidden rounded-[8px] w-[100%] h-[320px]"
-                                    src={description.relatedProducts.product2.images.tablet} alt="product2 image" />
-                                <img loading="lazy" className="hidden lg:block rounded-[8px] w-[100%] min-h-[320px]"
-                                    src={description.relatedProducts.product2.images.desktop} alt="product2 image" />
+                                <picture>
+                                    <source srcSet={description.relatedProducts.product2.images.desktop} media="(min-width:1100px)" />
+                                    <source srcSet={description.relatedProducts.product2.images.tablet} media="(min-width:768px)" />
+                                    <img className="rounded-[8px]"
+                                        loading="lazy"
+                                        src={description.relatedProducts.product2.images.mobile}
+                                        alt=""
+                                    />
+                                </picture>
                                 <h2 className="text-center text-[28px] font-bold my-[20px]">
                                     {description.relatedProducts.product2.title}
                                 </h2>
@@ -154,16 +151,15 @@ function Cart() {
                                     <button onClick={scrollUpFn} className="bg-buttonBackground hover:bg-buttonBackgroundHoverOrange   text-secondaryText text-[13px] px-[31px] py-[15px] max-w-[160px] block m-auto">SEE PRODUCT</button></Link>
                             </div>
                             <div className="md:w-[30%]">
-                                <img loading="lazy"
-                                    className="rounded-[8px] md:hidden m-auto h-[200px]"
-                                    src={description.relatedProducts.product3.images.mobile}
-                                    alt="product2 image"
-                                />
-                                <img loading="lazy" className="hidden md:block lg:hidden md:h-[320px] w-[100%] rounded-[8px]"
-                                    src={description.relatedProducts.product3.images.tablet} alt="product3 image" />
-
-                                <img loading="lazy" className="hidden lg:block min-h-[320px]"
-                                    src={description.relatedProducts.product3.images.desktop} alt="product3 image" />
+                                <picture>
+                                    <source srcSet={description.relatedProducts.product3.images.desktop} media="(min-width:1100px)" />
+                                    <source srcSet={description.relatedProducts.product3.images.tablet} media="(min-width:768px)" />
+                                    <img className="rounded-[8px]"
+                                        loading="lazy"
+                                        src={description.relatedProducts.product3.images.mobile}
+                                        alt=""
+                                    />
+                                </picture>
                                 <h2 className="text-center text-[28px] font-bold my-[20px] ">
                                     {description.relatedProducts.product3.title}
                                 </h2>
