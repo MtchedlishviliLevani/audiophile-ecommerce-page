@@ -2,7 +2,6 @@ import headphonesImg from "../assets/images/shared/desktop/image-category-thumbn
 import speakerImg from "../assets/images/shared/desktop/image-category-thumbnail-speakers.png";
 import earphonesImg from "../assets/images/shared/desktop/image-category-thumbnail-earphones.png"
 import arrowRight from "../assets/images/shared/desktop/icon-arrow-right.svg"
-import Container from "./Container";
 import { Link } from "react-router-dom";
 
 
@@ -11,8 +10,8 @@ function ActiveMenu({ setIsOpenMenu }: { setIsOpenMenu: React.Dispatch<React.Set
         setIsOpenMenu(false)
     }
     return (
-        <div className="bg-secondaryBakcground  z-30 top-[11.5%] absolute w-[100%] h-[90%] xl:hidden">
-            <Container>
+        <div className={` overflow-auto bg-secondaryBakcground  z-30 top-[89.8px] md:top-[85px] h-[calc(100vh-89.8px)] md:h-[calc(100vh-85px)]   fixed w-[100%] xl:hidden`}>
+            <div className="container">
                 <div className="bg-secondaryBakcground flex flex-col md:flex-row gap-[68px] md:gap-3 mt-[84px] pb-[84px]">
                     <div className="bg-gray rounded-lg relative sm:w-[100%]">
                         <img loading="lazy" className="absolute top-[15%] w-[160px] md:w-[140px] translate-x-[-50%] translate-y-[-50%] left-[50%]" src={headphonesImg} alt="" />
@@ -39,7 +38,7 @@ function ActiveMenu({ setIsOpenMenu }: { setIsOpenMenu: React.Dispatch<React.Set
                         </div>
                     </div>
                 </div>
-            </Container>
+            </div>
         </div>
     );
 }

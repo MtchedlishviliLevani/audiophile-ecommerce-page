@@ -1,6 +1,5 @@
 import { Link, useLoaderData, useNavigate } from "react-router-dom";
 import { Product } from "../data";
-import Container from "../components/Container";
 import scrollUpFn from "../helper/scrollUp";
 import { useSelector } from "react-redux";
 import { rootState } from "../store";
@@ -23,7 +22,7 @@ function Cart() {
 
 
     return (
-        <Container>
+        <div className="container">
             <div className="mt-[130px]">
                 <span onClick={backPrvsPage} className="text-[15px] opacity-45 cursor-pointer">Go Back</span>
                 <div className="mt-[30px] ">
@@ -169,7 +168,7 @@ function Cart() {
                     </div>
                 </div>
             </div>
-        </Container >
+        </div >
     );
 }
 

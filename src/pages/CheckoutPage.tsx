@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Container from "../components/Container";
 import { useSelector } from "react-redux";
 import { rootState } from "../store";
 import { selectTotalPrice } from "../features/cart/cartSlice";
@@ -27,7 +26,7 @@ function CheckoutPage() {
         <>
             <div className="xl:bg-gray mt-[90px]">
                 {isValidated && <CheckoutPageModal />}
-                <Container>
+                <div className="container">
                     <section className="xl:py-[25px]" >
                         <h5 onClick={() => navitagate(-1)} className="opacity-45 text-[16px] my-[20px] xl:mb-[20px] cursor-pointer ">Go Back </h5>
                         <div className="xl:grid xl:grid-cols-[31%,31%,31%] xl:grid-rows-[auto,auto] xl:gap-[60px] xl:auto-rows-min ">
@@ -301,7 +300,7 @@ function CheckoutPage() {
                             </div></div>
 
                     </section>
-                </Container></div>
+                </div></div>
 
         </>
     );

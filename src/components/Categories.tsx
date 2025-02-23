@@ -1,7 +1,6 @@
 import headphonesImg from "../assets/images/shared/desktop/image-category-thumbnail-headphones.png";
 import speakerImg from "../../src/assets/images/shared/desktop/image-category-thumbnail-speakers.png"
 import earphonesImg from "../assets/images/shared/desktop/image-category-thumbnail-earphones.png"
-// import arrowRight from "../assets/images/shared/desktop/icon-arrow-right.svg"
 import Category from "./Category";
 function Categories() {
     console.log(22)
