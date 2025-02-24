@@ -6,6 +6,8 @@ import ActiveMenu from "./ActiveMenu";
 import { Link } from "react-router-dom";
 import scrollUpFn from "../helper/scrollUp";
 import { motion } from "framer-motion"
+import { useSelector } from "react-redux";
+import { rootState } from "../store";
 
 
 
@@ -26,6 +28,9 @@ function Header({ onIsShown, isShown }: {
             window.document.body.style.overflow = "auto"
         }
     }, [isOpenMenu])
+
+    const cartItemsLength = useSelector((state: rootState) => state.cart.productInfo.length)
+    console.log(cartItemsLength, "cartItemsLength")
     return (
         <div className="h-[100%] flex flex-col relative">
             <motion.header
@@ -66,7 +71,10 @@ function Header({ onIsShown, isShown }: {
                                     <Link onClick={() => scrollUpFn()} to="/earphones">EARPHONES</Link>
                                 </li>
                             </div>
-                            <img onClick={handleClick} loading="lazy" src={cart} className="hover:cursor-pointer" />
+                            <div className="relative hover:cursor-pointer" onClick={handleClick}>
+                                <img loading="lazy" src={cart} className="w-full h-auto z-10" alt="cart" />
+                                {cartItemsLength && <div className="absolute  top-[-60%] right-[-30%]  text-buttonBackground" >{cartItemsLength}</div>}
+                            </div>
                         </ul>
                     </nav>
                 </div>
